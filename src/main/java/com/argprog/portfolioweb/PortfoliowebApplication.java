@@ -18,7 +18,7 @@ public class PortfoliowebApplication {
 		return new WebMvcConfigurer() {
 			@Override
 			public void addCorsMappings(CorsRegistry registry) {
-				registry.addMapping("/**").allowedOrigins("http://localhost:4200").allowedMethods("*").allowedHeaders("*");
+				registry.addMapping("/**").allowedOrigins("https://portfolioweb-frontend.web.app").allowedMethods("*").allowedHeaders("*");
 			}
 		};
 	}

@@ -23,29 +23,29 @@ public class Controller {
     @Autowired
     private IPersonaService personaServ;
     
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "https://portfolioweb-frontend.web.app")
     @PostMapping ("/new/persona")
     public void agregarPersona (@RequestBody Persona pers){//cuerpo de la solicitud
         personaServ.crearPersona(pers);
     }
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "https://portfolioweb-frontend.web.app")
     @GetMapping ("/ver/persona/{id}")
     @ResponseBody
     public Persona buscarPersona(@PathVariable Long id){
         return personaServ.buscarPersona(id);
     }
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "https://portfolioweb-frontend.web.app")
     @GetMapping ("/ver/personas")
     @ResponseBody
     public List<Persona> verPersonas(){
         return personaServ.verPersonas();
     }
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "https://portfolioweb-frontend.web.app")
     @DeleteMapping("/delete/persona/{id}")
     public void borrarPersona(@PathVariable Long id){
        personaServ.borrarPersona(id);
     }
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "https://portfolioweb-frontend.web.app")
     @PutMapping("/modificar/persona/{id}")
     public Persona editarPersona (@PathVariable Long id,
                                   @RequestParam ("nombre") String nuevoNombre,

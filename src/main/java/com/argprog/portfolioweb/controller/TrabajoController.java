@@ -21,30 +21,30 @@ public class TrabajoController {
     
     @Autowired
     private ITrabajoService trabajoRepo;
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "https://portfolioweb-frontend.web.app")
     @PostMapping ("/crear/trabajo")
     public void agregarTrabajo (@RequestBody Trabajo trab){//cuerpo de la solicitud
         trabajoRepo.crearTrabajo(trab);
     }
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "https://portfolioweb-frontend.web.app")
     @GetMapping ("/ver/trabajo/{id}")
     @ResponseBody
     public Trabajo buscarTrabajo(@PathVariable Long id){
         return trabajoRepo.buscarTrabajo(id);
     }
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "https://portfolioweb-frontend.web.app")
     @GetMapping ("/ver/trabajos")
     @ResponseBody
     public List<Trabajo> verTrabajos(){
         return trabajoRepo.verTrabajos();
     }
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "https://portfolioweb-frontend.web.app")
     @DeleteMapping("/delete/trabajo/{id}")
     public void borrarTrabajo(@PathVariable Long id){
        trabajoRepo.borrarTrabajo(id);
     }
    
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "https://portfolioweb-frontend.web.app")
     @PutMapping("/modificar/trabajo/{id}")
     public Trabajo editarTrabajo (@PathVariable Long id,
                                   @RequestBody Trabajo trab){

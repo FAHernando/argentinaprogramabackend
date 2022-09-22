@@ -21,23 +21,23 @@ public class FormularioController {
     @Autowired
     private IFormularioService formServ;
     
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "https://portfolioweb-frontend.web.app")
     @PostMapping ("/nuevo/mensaje")
     public void agregarMensaje (@RequestBody FormularioContacto formCon){//cuerpo de la solicitud
         formServ.crearMensaje(formCon);
     }
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "https://portfolioweb-frontend.web.app")
     @GetMapping ("/ver/mensajes")
     @ResponseBody
     public List<FormularioContacto> verMensajes(){
         return formServ.verMensajes();
     }
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "https://portfolioweb-frontend.web.app")
     @DeleteMapping("/delete/mensaje/{id}")
     public void borrarMensaje(@PathVariable Long id){
        formServ.borrarMensaje(id);
     }
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "https://portfolioweb-frontend.web.app")
     @PutMapping("/modificar/mensaje/{id}")
     public FormularioContacto editarMensaje (@PathVariable Long id,
                                   @RequestParam ("nombre") String nuevoNombre,

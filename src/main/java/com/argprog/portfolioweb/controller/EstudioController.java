@@ -24,30 +24,30 @@ public class EstudioController {
     
     @Autowired
     private IEstudioService estudioServ;
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "https://portfolioweb-frontend.web.app")
     @PostMapping ("/new/estudio")
     public void agregarEstudio (@RequestBody Estudio est){//cuerpo de la solicitud
         estudioServ.crearEstudio(est);
     }
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "https://portfolioweb-frontend.web.app")
     @GetMapping ("/ver/estudio/{id}")
     @ResponseBody
     public Estudio buscarEstudio(@PathVariable Long id){
         return estudioServ.buscarEstudio(id);
     }
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "https://portfolioweb-frontend.web.app")
     @GetMapping ("/ver/estudios")
     @ResponseBody
     public List<Estudio> verEstudios(){
         return estudioServ.verEstudios();
     }
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "https://portfolioweb-frontend.web.app")
     @DeleteMapping("/delete/estudio/{id}")
     public void borrarEstudio(@PathVariable Long id){
        estudioServ.borrarEstudio(id);
     }
    
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "https://portfolioweb-frontend.web.app")
     @PutMapping("/modificar/estudio/{id}")
     public Estudio editarEstudio (@PathVariable Long id,
                                   @RequestBody Estudio est){

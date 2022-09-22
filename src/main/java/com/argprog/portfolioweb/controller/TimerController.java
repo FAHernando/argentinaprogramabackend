@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/api/v1.0")
 public class TimerController {
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "https://portfolioweb-frontend.web.app")
     @GetMapping("/time")
     @ResponseStatus(HttpStatus.OK)
     public String getCurrentTime(){
